@@ -1,0 +1,16 @@
+::ng-deep .p-menubar {
+    background-color: rgb(207, 205, 205);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+  }
+
+  ::ng-deep .p-button{
+
+  background-color: #007bff; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+
+  ::ng-deep .p-menu{
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
