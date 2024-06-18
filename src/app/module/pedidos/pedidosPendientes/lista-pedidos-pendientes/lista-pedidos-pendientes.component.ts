@@ -25,7 +25,7 @@ export class ListaPedidosPendientesComponent {
     {
     
     
-      id : 1,
+    id : 1,
     nombre  : 'jose mena',
     apellidos: 'Terrez carasco',
     fecha: '12/6/2024',
@@ -62,7 +62,7 @@ export class ListaPedidosPendientesComponent {
     nombre  : 'Maria',
     apellidos: 'Barboza Luño',
     fecha: '12/6/2024',
-    menu: 'Amburgesa',
+    menu: 'chuleta',
     cantidad  : 1 ,
     total : 10.2
     } 
