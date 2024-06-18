@@ -33,7 +33,7 @@ export class ListaPedidosPendientesComponent {
     cantidad  : 2 ,
     total : 58.9
     } ,
-    {
+    { 
     
     
       id : 2,
