@@ -1,1 +1,40 @@
-<p>listar-pedidos-enviados works!</p>
+<h1>Pedidos Enviados</h1>
+<p-table
+    #tbalumosListar
+    [value]="pedidosE"
+    [paginator]="true"
+    [rows]="5"
+    [tableStyle]="{ 'min-width': '50rem' }"
+    [globalFilterFields]="['id', 'nombre', 'apellidos', 'fecha','menu','cantidad','total']"
+    [rowsPerPageOptions]="[5, 10, 20]"
+    responsiveLayout="scroll"
+>
+    <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="id">Id <p-sortIcon field="id"></p-sortIcon></th>
+            <th pSortableColumn="nombre">Nombre <p-sortIcon field="nombre"></p-sortIcon></th>
+            <th pSortableColumn="apellidos">Apellidos <p-sortIcon field="apellidos"></p-sortIcon></th>
+            <th pSortableColumn="fecha">Fecha <p-sortIcon field="fecha"></p-sortIcon></th>
+            <th pSortableColumn="menu">Menú <p-sortIcon field="menu"></p-sortIcon></th>
+            <th pSortableColumn="cantidad">Cantidad <p-sortIcon field="cantidad"></p-sortIcon></th>
+            <th pSortableColumn="total">Total <p-sortIcon field="total"></p-sortIcon></th>
+            <th>Acciones</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-pedidos>
+        <tr>
+            <td>{{ pedidos.id }}</td>
+            <td>{{ pedidos.nombre }}</td>
+            <td>{{ pedidos.apellidos }}</td>
+            <td>{{ pedidos.fecha }}</td>
+            <td>{{ pedidos.menu }}</td>
+            <td>{{ pedidos.cantidad }}</td>
+            <td>{{ pedidos.total }}</td>
+            <td>
+                <p-button [style]="ButtonStyle" icon="pi pi-eye" [rounded]="true" severity="info"></p-button>
+                <p-button [style]="ButtonStyle" icon="pi pi-pencil" [rounded]="true" severity="warning"></p-button>
+                <p-button [style]="ButtonStyle" icon="pi pi-trash" [rounded]="true" severity="danger"></p-button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
