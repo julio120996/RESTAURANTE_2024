@@ -21,7 +21,8 @@ export class MenuBarComponent implements OnInit{
     this.itemsMenuBar = [
       {
           label: 'Inicio',
-          icon: 'pi pi-home'
+          icon: 'pi pi-home',
+           routerLink : '/Principal'
       },
       {
           label: 'Pedidos',
