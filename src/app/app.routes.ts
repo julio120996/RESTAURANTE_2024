@@ -19,11 +19,11 @@ export const routes: Routes = [
 
                 {path : '' , pathMatch :"full" , redirectTo:"Home"},
                 {path :'Home' , component : HomeComponent },
-                {path : 'PedidosEnviados' , component :ListarPedidosEnviadosComponent} ,
-                {path : 'PedidosPendientes', component :ListaPedidosPendientesComponent},
-                {path :'ReservaNormal' , component : ListarReservaNormalComponent },
-                {path : 'ReservaSemiVIP' , component :ListarReservaSemiVIPComponent} ,
-                {path : 'ReservaVIP', component :ListarReservaVIPComponent},
+                {path : 'Pedidos Enviados' , component :ListarPedidosEnviadosComponent} ,
+                {path : 'Pedidos Pendientes', component :ListaPedidosPendientesComponent},
+                {path :'Reserva Normal' , component : ListarReservaNormalComponent },
+                {path : 'ReservaSemi VIP' , component :ListarReservaSemiVIPComponent} ,
+                {path : 'Reserva VIP', component :ListarReservaVIPComponent},
                 {path : 'Usuarios', component :ListarUserComponent}
   ] }
 

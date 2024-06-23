@@ -30,13 +30,13 @@ export class MenuBarComponent implements OnInit{
           items:[{
             label : 'Pendientes',
             icon : 'pi pi-clock',
-            routerLink : '/Principal/PedidosPendientes'
+            routerLink : '/Principal/Pedidos Pendientes'
 
           },
           {
              label : 'Enviados',
              icon : 'pi pi-send',
-              routerLink : '/Principal/PedidosEnviados'
+              routerLink : '/Principal/Pedidos Enviados'
           }
         ]
       },
@@ -46,19 +46,19 @@ export class MenuBarComponent implements OnInit{
         items:[{
           label :'Normal' ,
           icon:'pi pi-sparkles',
-          routerLink : '/Principal/ReservaNormal'
+          routerLink : '/Principal/Reserva Normal'
           
         },
         {
           label: 'Semi VIP',
           icon : 'pi pi-trophy',
-          routerLink : '/Principal/ReservaSemiVIP'
+          routerLink : '/Principal/ReservaSemi VIP'
 
         },
         {
           label : 'VIP',
           icon : 'pi pi-crown',
-          routerLink : '/Principal/ReservaVIP'
+          routerLink : '/Principal/Reserva VIP'
         }
         
         ]
