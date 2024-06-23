@@ -1,14 +1,26 @@
-<!--<div class="card">
-    <p-galleria 
-      [value]="images" 
-      [numVisible]="5" 
-      [circular]="true" 
-      [showItemNavigators]="true" 
-      [showThumbnails]="false" 
-      [responsiveOptions]="responsiveOptions" 
-      [containerStyle]="{ 'max-width': '640px' }">
-        <ng-template pTemplate="item" let-item>
-          <img [src]="item.itemImageSrc" [alt]="item.alt" style="width: 100%; display: block;" />
-        </ng-template>
-    </p-galleria>
-  </div> -->
+<div class="card">
+    <div class="carousel">
+        <div class="-my-8">
+            <p-galleria 
+                [value]="images" 
+                [numVisible]="5" 
+                [circular]="true" 
+                [showItemNavigators]="true" 
+                [showThumbnails]="false" 
+                [responsiveOptions]="responsiveOptions" 
+                [containerStyle]="{ 'max-width': '650px '}">
+                <ng-template pTemplate="item" let-item>
+                    <img [src]="item.itemImageSrc" class="image" />
+                </ng-template>
+            </p-galleria>
+        </div>
+    </div>
+    <div class="text">
+        <h1>RestoSwift</h1>
+    </div>
+</div>
+
+<div style="padding-top: 200px;">
+    <hr>
+</div>
+
