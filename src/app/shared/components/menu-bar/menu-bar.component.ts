@@ -1,94 +1,40 @@
-import { Component, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/api';
-import { MenubarModule } from 'primeng/menubar';
-import { ButtonModule } from 'primeng/button';
-import { MenuModule } from 'primeng/menu';
+import { Component, Output, output, EventEmitter } from '@angular/core';
+import { RouterModule } from '@angular/router'; // Importa RouterModule
+import { CommonModule } from '@angular/common';
+import { navbarData } from './nav-data';
 
+
+interface SideNavToggle{
+  screenWidth: number;
+  collapsed : boolean;
+}
 
 @Component({
   selector: 'app-menu-bar',
   standalone: true,
-  imports: [MenubarModule ,ButtonModule, MenuModule ] ,
+  imports: [CommonModule, RouterModule,],
   templateUrl: './menu-bar.component.html',
-  styleUrl: './menu-bar.component.scss'
+  styleUrls: ['./menu-bar.component.scss']
 })
-export class MenuBarComponent implements OnInit{
-  itemsMenuBar: MenuItem[] | undefined;
+export class MenuBarComponent {
+  @Output() onToggleSideNav : EventEmitter<SideNavToggle> =  new EventEmitter();
+  collapsed = false;
+  screenWidth =0;
+  navData = navbarData;
 
-  itemsMenuUsuario: MenuItem[] | undefined;
-
-  ngOnInit() {
-    this.itemsMenuBar = [
-      {
-          label: 'Inicio',
-          icon: 'pi pi-home',
-           routerLink : '/Principal'
-      },
-      {
-          label: 'Pedidos',
-          icon: 'pi pi-cart-minus',
-          items:[{
-            label : 'Pendientes',
-            icon : 'pi pi-clock',
-            routerLink : '/Principal/PedidosPendientes'
-
-          },
-          {
-             label : 'Enviados',
-             icon : 'pi pi-send',
-              routerLink : '/Principal/PedidosEnviados'
-          }
-        ]
-      },
-      {
-        label: 'Reservas',
-        icon: 'pi pi-book',
-        items:[{
-          label :'Normal' ,
-          icon:'pi pi-sparkles',
-          routerLink : '/Principal/ReservaNormal'
-          
-        },
-        {
-          label: 'Semi VIP',
-          icon : 'pi pi-trophy',
-          routerLink : '/Principal/ReservaSemiVIP'
-
-        },
-        {
-          label : 'VIP',
-          icon : 'pi pi-crown',
-          routerLink : '/Principal/ReservaVIP'
-        }
-        
-        ]
-    } ,
-     {
-      label: 'Usuarios',
-      icon: 'pi pi-users',
-      routerLink : '/Principal/Usuarios'
-      }
-  ] ,
-  this.itemsMenuUsuario=[
-    {
-      label :'Ver Perfil',
-      icon : 'pi pi-user'
-
-    },
-
-    {
-      label :'Cerrar Seccion',
-      icon : 'pi pi-sign-out'
-
-    }
-    
-
-
-  ]
+  toggleCollapse():void{
+    this.collapsed = !this.collapsed;
+    this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
   }
 
+  closeSidenav() : void{
 
-  
-              
-              
+    this.collapsed=false;
+    this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
+  }
 }
+
+
+
+
+

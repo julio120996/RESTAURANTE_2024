@@ -8,6 +8,4 @@ export interface Pedidosp{
     cantidad  : number;
     total : number ;
     
-
-
  }

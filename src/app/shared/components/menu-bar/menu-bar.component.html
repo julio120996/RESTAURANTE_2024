@@ -1,13 +1,17 @@
-<div class="card">
-    <p-menubar  [model]="itemsMenuBar" >
-        <ng-template pTemplate="start">
-            <a href="/">
-                <img src="assets/img/logo.png" width="100px" >
-            </a>
-        </ng-template>
-        <ng-template pTemplate="end" >
-            <p-menu  #menubar [model]="itemsMenuUsuario" [popup]="true" />
-            <p-button (click)="menubar.toggle($event)"  icon="pi pi-user" [rounded]="true" label="Julio Bustamante" [text]="true" size="large" />
-        </ng-template>
-    </p-menubar>
-</div>
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': '' ">
+    <div class="logo-container">
+      <button class="logo" (click)="toggleCollapse()">M</button>
+      <div class="logo-text" *ngIf="collapsed">MENU</div>
+      <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
+        <i class="fa fa-times close-icon"></i>
+      </button>
+    </div>
+    <ul class="sidenav-nav">
+      <li class="sidenav-nav-item" *ngFor="let data of navData">
+        <a class="sidenav-nav-link" [routerLink]="data.routeLink">
+          <i class="sidenav-link-icon" [class]="data.icon"></i>
+          <span class="sidenav-link-text" *ngIF="collapsed">{{ data.Label }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>

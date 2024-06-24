@@ -1,16 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MenuBarComponent } from '../../components/menu-bar/menu-bar.component';
 import { ChatbotComponent } from '../../components/chatbot/chatbot.component';
-
+import { MenuBarComponent } from '../../components/menu-bar/menu-bar.component';
 
 @Component({
   selector: 'app-main-layout',
   standalone: true,
-  imports: [RouterOutlet , MenuBarComponent,ChatbotComponent],
+  imports: [RouterOutlet, ChatbotComponent , MenuBarComponent],
   templateUrl: './main-layout.component.html',
-  styleUrl: './main-layout.component.scss'
+  styleUrls: ['./main-layout.component.scss'] // Corrección aquí
 })
-export class MainLayoutComponent {
-
-}
+export class MainLayoutComponent { }

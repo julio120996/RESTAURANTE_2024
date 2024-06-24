@@ -28,7 +28,7 @@ export class ChatbotComponent {
  
      
   MensajePrueva():void{
-    console.log("ola soi tu aistente virtual ,Rebecca")
+    console.log("Hola soy tu asistente virtual ,Rebecca")
   let  audio= new Audio();
   audio.src="assets/aud/IreneSaludo.wav"
   audio.load();
